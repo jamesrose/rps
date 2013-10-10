@@ -1,0 +1,5 @@
+%p#waiting-for-player Waiting for player to join game&hellip;
+#weapons
+  %h2 Choose your weapon:
+  - Game::VALID_MOVES.each do |move|
+    .weapon= link_to png_tag(move), '#', class: move, data: { move: move }

@@ -1,0 +1,16 @@
+#game{data: { id: @game.id }}
+  %h1 Rock-paper-scissors
+
+  %h2 Players
+
+  %ol#players
+    - @game.players.each do |player|
+      %li
+        = player.name
+        - if player == current_player
+          %span.tiny (that's you)
+
+  - if current_player.has_played?(@game)
+    = render partial: 'results', locals: { game: @game }
+  - else
+    = render partial: 'selection'

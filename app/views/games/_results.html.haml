@@ -1,0 +1,17 @@
+#results
+  - if game.complete?
+    - if game.winner == current_player
+      %p.result.won Congratulations. You won!
+    - elsif game.winner == game.second_player(current_player)
+      %p.result.lost Better luck next time? You lost!
+    - else
+      %p.result.draw Nil-nil &mdash; draw!
+  .weapon.your-result
+    %h2> You (#{game.player_move(current_player)})
+    = png_tag(game.player_move(current_player))
+  - if game.second_players_move(current_player)
+    .weapon.their-result
+      %h2
+        = game.second_player(current_player).name
+        (#{game.second_players_move(current_player)})
+      = png_tag(game.second_players_move(current_player))

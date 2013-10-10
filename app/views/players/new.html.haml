@@ -1,0 +1,8 @@
+%h1 Rock-paper-scissors
+
+%p Until the retina authentication system is operational, please identify yourself.
+
+= form_for @player do |f|
+  = f.text_field :name, placeholder: 'Name', required: true
+  = f.submit 'Find Player'
+  

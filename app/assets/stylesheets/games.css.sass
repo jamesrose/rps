@@ -1,0 +1,38 @@
+#weapons
+  display: none
+
+.weapon
+  width: 250px
+  display: inline-block
+  padding: 5px
+  border: 1px solid #FFF
+
+#weapons .weapon:hover, #weapons .weapon.chosen
+  border: 1px solid #fafafa
+  -webkit-box-shadow: 0 0 6px #007eff
+  -moz-box-shadow: 0 0 5px #007eff
+  box-shadow: 0 0 5px #007eff
+  border-radius: 5px
+  cursor: pointer
+
+#results .weapon h2
+  text-align: center
+
+#results
+  .weapon.your-result
+    padding-right: 100px
+    border-right: 1px solid rgba(0, 0, 0, 0.2)
+  .weapon.their-result
+    padding-left: 100px
+
+.tiny
+  font-size: 12px
+  color: #999
+  
+.result
+  font-size: 36px
+  &.won
+    color: #79ad11
+  &.lost
+  &.draw
+    color: #1492d6

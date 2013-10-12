@@ -3,7 +3,7 @@ $ ->
     $('#weapons').show()
     $("#waiting-for-player").hide()
 
-  client = new Faye.Client 'http://localhost:9292/faye'
+  client = new Faye.Client '<%= FAYE_URL %>'
   pubsub_path = "/games/#{$('#game').data('id')}"
 
   subscription = client.subscribe pubsub_path, (message) ->

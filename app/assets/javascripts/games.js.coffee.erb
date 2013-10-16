@@ -19,5 +19,5 @@ $ ->
     target = $(e.currentTarget)
     $('#weapons .weapon').removeClass('chosen')
     target.parents('.weapon').addClass('chosen')
-    $.post("#{pubsub_path}/add_move", target.data())
-    client.publish(pubsub_path, type: 'player_moved')
+    $.post("#{pubsub_path}/add_move", target.data()).done ->
+     client.publish(pubsub_path, type: 'player_moved')

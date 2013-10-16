@@ -11,7 +11,8 @@ $ ->
       when 'player_connected'
         $('#weapons').show()
         $('#waiting-for-player').hide()
-        $('#players').append "<li>#{message['name']}</li>"
+        if message['name'] != $('#game').data('current-player')
+          $('#players').append "<li>#{message['name']}</li>"
       when 'player_moved'
         window.location.reload(true)
 
